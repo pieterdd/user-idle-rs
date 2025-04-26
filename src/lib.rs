@@ -20,12 +20,8 @@ use std::time::Duration;
 
 pub use error::Error;
 
-#[cfg(all(target_os = "linux", not(feature = "dbus")))]
-#[path = "x11_impl.rs"]
-mod idle;
-
-#[cfg(all(target_os = "linux", feature = "dbus"))]
-#[path = "dbus_impl.rs"]
+#[cfg(all(target_os = "linux"))]
+#[path = "linux_impl.rs"]
 mod idle;
 
 #[cfg(target_os = "windows")]

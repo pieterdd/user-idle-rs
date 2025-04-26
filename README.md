@@ -2,15 +2,14 @@
 
 | OS              | Supported |
 | --------------- | --------- |
-| Linux (x11)     | ✔️         |
-| Linux (dbus)    | ✔️*        |
-| Linux (wayland) | ❌         |
-| Windows         | ✔️         |
-| MacOS           | ✔️         |
+| Linux           | ✔️*       |
+| Windows         | ✔️        |
+| MacOS           | ✔️        |
 
-\* DBus returns the time the session has been locked, not the time since the last user input event.
-
-By default, x11 is used on Linux. DBus can be enabled in `Cargo.toml` by disabling default-features and enabling `dbus`.
+\* The Linux implementation will do the following:
+1. Try to get the idle time from Mutter via DBus. This should work on GNOME desktops with Wayland or X11.
+2. Try to get the idle time from X11. This will not work on Wayland.
+3. As a last resort, try to get the screensaver's idle time via DBus. Note that the screensaver may report a value of 0ns when it's not active.
 
 ### Example
 
