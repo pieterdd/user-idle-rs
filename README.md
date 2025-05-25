@@ -21,4 +21,5 @@ let idle = UserIdle::get_time().unwrap();
 let idle_seconds = idle.as_seconds();
 let idle_minutes = idle.as_minutes();
 ```
-Check the [documentation](https://docs.rs/user-idle/latest/user_idle/) for more methods
+
+Check the documentation for more methods.
