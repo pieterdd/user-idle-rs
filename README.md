@@ -1,4 +1,6 @@
-# Get the idle time of a user
+# user-idle2
+
+This is a fork of [user-idle-rs](https://github.com/olback/user-idle-rs), which had been idle for a while and did not support Wayland.
 
 | OS              | Supported |
 | --------------- | --------- |
