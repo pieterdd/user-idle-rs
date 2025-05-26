@@ -22,7 +22,7 @@ pub fn get_idle_time() -> Result<Duration, Error> {
         XCloseDisplay(display);
 
         if status == 1 {
-            Ok(Duration::from_millis(time))
+            Ok(Duration::from_millis(time.into()))
         } else {
             Err(Error::new("Status not OK"))
         }
