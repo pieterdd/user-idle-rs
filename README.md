@@ -16,7 +16,7 @@ This is a fork of [user-idle-rs](https://github.com/olback/user-idle-rs), which 
 ### Example
 
 ```rust
-use user_idle::UserIdle;
+use user_idle2::UserIdle;
 
 let idle = UserIdle::get_time().unwrap();
 
